@@ -1,0 +1,17 @@
+{
+    "name": "kareem-fouad/php-router",
+    "description": "php routing (like laravel)",
+    "type": "library",
+    "authors": [
+        {
+            "name": "kareem-torky",
+            "email": "kareemmfouad.ece@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "PhpRouter\\Src\\": "src/"
+        }
+    }
+}
