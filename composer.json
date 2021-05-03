@@ -8,10 +8,13 @@
             "email": "kareemmfouad.ece@gmail.com"
         }
     ],
-    "require": {},
     "autoload": {
         "psr-4": {
-            "PhpRouter\\Src\\": "src/"
+            "Src\\": "src/",
+            "App\\": "app/"
         }
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^5.2"
     }
 }

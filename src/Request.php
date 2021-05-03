@@ -1,6 +1,6 @@
 <?php 
 
-namespace PhpRouter\Src;
+namespace Src;
 
 class Request 
 {
