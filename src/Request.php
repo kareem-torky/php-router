@@ -4,7 +4,7 @@ namespace Src;
 
 class Request 
 {
-    private $method, $data;
+    private $method, $data, $url;
 
     public function __construct()
     {
@@ -16,8 +16,10 @@ class Request
     {
         if ($this->method == 'GET') {
             $this->data = $_GET; 
+            $this->url = array_key_first(array_splice($this->data, 0, 1));
         } elseif ($this->method == 'POST') {
             $this->data = array_merge($_POST, $_FILES);
+            $this->url = $_SERVER['QUERY_STRING'];
         }
     }
 
