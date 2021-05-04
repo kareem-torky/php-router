@@ -8,7 +8,13 @@ class App
 {
     public function __construct()
     {
+        $this->loadWebRoutes();
         $this->passRequestToRouter();
+    }
+
+    private function loadWebRoutes() 
+    {
+        require ROUTES_PATH . "web.php";
     }
 
     private function passRequestToRouter()
