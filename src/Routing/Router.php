@@ -22,6 +22,7 @@ class Router
         $this->method = $request->getMethod();
         $this->data = $request->getData();
         $this->route = Route::getInstance();
+        // dump($this);
         $this->match();
         $this->callAction();
     }
@@ -45,7 +46,7 @@ class Router
 
     private function matchMethod()
     {
-        $this->routeData = $this->route->getOne($this->url);
+        $this->routeData = $this->route->getOneByUrl($this->url);
 
         if ($this->routeData['method'] !== $this->method) {
             throw new MethodNotAllowed("405 method not allowed");

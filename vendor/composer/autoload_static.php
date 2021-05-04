@@ -10,6 +10,7 @@ class ComposerStaticInit5f432c87fccb0f4dc59e9b12263d2d8f
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
+        'fdaf1585d268c446662a9d31096bdce3' => __DIR__ . '/../..' . '/src/Helpers/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -50,10 +51,20 @@ class ComposerStaticInit5f432c87fccb0f4dc59e9b12263d2d8f
     );
 
     public static $classMap = array (
+        'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\ProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProductController.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Src\\App' => __DIR__ . '/../..' . '/src/App.php',
+        'Src\\Controller' => __DIR__ . '/../..' . '/src/Controller.php',
         'Src\\Request' => __DIR__ . '/../..' . '/src/Request.php',
+        'Src\\Routing\\Exceptions\\ActionNotFound' => __DIR__ . '/../..' . '/src/Routing/Exceptions/ActionNotFound.php',
+        'Src\\Routing\\Exceptions\\ControllerNotFound' => __DIR__ . '/../..' . '/src/Routing/Exceptions/ControllerNotFound.php',
+        'Src\\Routing\\Exceptions\\MethodNotAllowed' => __DIR__ . '/../..' . '/src/Routing/Exceptions/MethodNotAllowed.php',
+        'Src\\Routing\\Exceptions\\RouteNotFound' => __DIR__ . '/../..' . '/src/Routing/Exceptions/RouteNotFound.php',
         'Src\\Routing\\Route' => __DIR__ . '/../..' . '/src/Routing/Route.php',
+        'Src\\Routing\\Router' => __DIR__ . '/../..' . '/src/Routing/Router.php',
+        'Src\\View' => __DIR__ . '/../..' . '/src/View.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'Symfony\\Component\\VarDumper\\Caster\\AmqpCaster' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/AmqpCaster.php',
         'Symfony\\Component\\VarDumper\\Caster\\ArgsStub' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/ArgsStub.php',

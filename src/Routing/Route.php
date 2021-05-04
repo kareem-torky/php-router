@@ -6,13 +6,14 @@ class Route
 {
     private static Route|null $route = null;
     private array $methods = ['get', 'post'];
-    private array $routingTable = []; 
+    private array $routingTable = [];
+    public $currentUrl;
 
     public static function __callStatic($method, $arguments)
     {
         $route = self::getInstance();
         if ($route->isAvailableMethod($method)) {
-            $route->add($method, $arguments);
+            return $route->add($method, $arguments);
         }
     }
 
@@ -27,13 +28,17 @@ class Route
 
     private function add($method, $arguments)
     {
-        $this->routingTable[$arguments[0]] = [
+        $this->currentUrl = $arguments[0];
+
+        $this->routingTable[$this->currentUrl] = [
             'method'      => strtoupper($method),
             'controller'  => $arguments[1][0],
             'action'      => $arguments[1][1],
             'name'        => null,
             'middlewares' => [],
         ];
+
+        return $this;
     }
 
     private function isAvailableMethod(string $method)
@@ -46,13 +51,28 @@ class Route
         return array_key_exists($url, $this->routingTable);
     }
 
-    public function getOne(string $url)
+    public function getOneByUrl(string $url)
     {
         return $this->routingTable[$url];
+    }
+
+    public function getOneByName(string $name)
+    {        
+        foreach ($this->routingTable as $url => $routeData) {
+            if ($name == $routeData['name']) 
+            return $url;
+        }
     }
 
     public function getAll()
     {
         return $this->routingTable;
+    }
+
+    public function name(string $name)
+    {
+        $this->routingTable[$this->currentUrl]['name'] = $name;
+
+        return $this;
     }
 }

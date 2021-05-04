@@ -6,10 +6,20 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
+    'App\\Http\\Controllers\\ProductController' => $baseDir . '/app/Http/Controllers/ProductController.php',
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'Src\\App' => $baseDir . '/src/App.php',
+    'Src\\Controller' => $baseDir . '/src/Controller.php',
     'Src\\Request' => $baseDir . '/src/Request.php',
+    'Src\\Routing\\Exceptions\\ActionNotFound' => $baseDir . '/src/Routing/Exceptions/ActionNotFound.php',
+    'Src\\Routing\\Exceptions\\ControllerNotFound' => $baseDir . '/src/Routing/Exceptions/ControllerNotFound.php',
+    'Src\\Routing\\Exceptions\\MethodNotAllowed' => $baseDir . '/src/Routing/Exceptions/MethodNotAllowed.php',
+    'Src\\Routing\\Exceptions\\RouteNotFound' => $baseDir . '/src/Routing/Exceptions/RouteNotFound.php',
     'Src\\Routing\\Route' => $baseDir . '/src/Routing/Route.php',
+    'Src\\Routing\\Router' => $baseDir . '/src/Routing/Router.php',
+    'Src\\View' => $baseDir . '/src/View.php',
     'Stringable' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
     'Symfony\\Component\\VarDumper\\Caster\\AmqpCaster' => $vendorDir . '/symfony/var-dumper/Caster/AmqpCaster.php',
     'Symfony\\Component\\VarDumper\\Caster\\ArgsStub' => $vendorDir . '/symfony/var-dumper/Caster/ArgsStub.php',

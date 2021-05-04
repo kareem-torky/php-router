@@ -12,7 +12,8 @@
         "psr-4": {
             "Src\\": "src/",
             "App\\": "app/"
-        }
+        },
+        "files": ["src/Helpers/functions.php"]
     },
     "require-dev": {
         "symfony/var-dumper": "^5.2"
