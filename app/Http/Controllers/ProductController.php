@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-class ProductController 
+use Src\Controller;
+
+class ProductController extends Controller
 {
     public function index()
     {

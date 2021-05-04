@@ -4,7 +4,7 @@ namespace Src;
 
 class Request 
 {
-    private $method, $data, $url;
+    private $url, $method, $data;
 
     public function __construct()
     {
@@ -46,5 +46,20 @@ class Request
     public function hasFile($key)
     {
         return isset($_FILES[$key]);
+    }
+
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    public function getMethod()
+    {
+        return $this->method;
+    }
+
+    public function getData()
+    {
+        return $this->data;
     }
 }

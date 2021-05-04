@@ -1,7 +1,8 @@
 <?php 
 
-require __DIR__ . "/../vendor/autoload.php";
-require __DIR__ . "/../routes/web.php";
+require __DIR__ . "/../env.php";
+require VENDOR_PATH . "autoload.php";
+require ROUTES_PATH . "web.php";
 
 use Src\App;
 

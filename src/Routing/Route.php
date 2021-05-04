@@ -41,8 +41,18 @@ class Route
         return in_array($method, $this->methods);
     }
 
-    public static function getRoutingTable()
+    public function has(string $url)
     {
-        return self::$route->routingTable;
+        return array_key_exists($url, $this->routingTable);
+    }
+
+    public function getOne(string $url)
+    {
+        return $this->routingTable[$url];
+    }
+
+    public function getAll()
+    {
+        return $this->routingTable;
     }
 }
