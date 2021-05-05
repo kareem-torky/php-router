@@ -100,6 +100,6 @@ class Router
             throw new ActionNotFound("Action Method Not Found");
         }
 
-        call_user_func([$this->controller, $action]);
+        call_user_func_array([$this->controller, $action], [$this->data]);
     }
 }

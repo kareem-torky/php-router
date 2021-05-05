@@ -6,8 +6,9 @@ use Src\Controller;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index($data)
     {
+        // dump($data);
         echo 'product index';
     }
 
