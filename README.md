@@ -4,6 +4,7 @@ This repository contains routing classes that enables you to define your routes 
 
 ### **Features**
 - Define GET/POST routes.
+- Query strings.
 - Named routes.
 - Apply middlewares.
 - Rendering error views (404 - 405).
