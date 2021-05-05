@@ -62,4 +62,11 @@ class Request
     {
         return $this->data;
     }
+
+    public function redirect($url)
+    {
+        $location = URL . $url;
+        
+        header("location: $location");
+    }
 }

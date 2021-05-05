@@ -16,7 +16,7 @@ class Router
     private Route $route;
     private $routeData;
 
-    public function __construct($request)
+    public function __construct(private $request)
     {
         $this->url = $request->getUrl();
         $this->method = $request->getMethod();
@@ -24,6 +24,7 @@ class Router
         $this->route = Route::getInstance();
         // dump($this);
         $this->match();
+        $this->applyMiddlewares();
         $this->callAction();
     }
 
@@ -53,6 +54,23 @@ class Router
         }
     }
 
+    private function applyMiddlewares()
+    {
+        $middlewares = $this->routeData['middlewares'];
+
+        foreach ($middlewares as $middleware) {
+            $middlewareObj = $this->getMiddlewareObj($middleware);
+            $middlewareObj->handle($this->request);
+        }
+    }
+
+    private function getMiddlewareObj($middleware) 
+    {
+        $middlewareClass = str_replace(" ", "", ucwords(str_replace("-", " ", $middleware)));
+        $middlewareClassWithNs = "App\Http\Middlewares\\" . $middlewareClass;
+        return new $middlewareClassWithNs;
+    }
+
     private function callAction()
     {
         try {
@@ -65,13 +83,13 @@ class Router
 
     private function getControllerObject()
     {
-        $controllerWithNamespace = $this->routeData['controller'];
+        $controllerClassWithNs = $this->routeData['controller'];
 
-        if (! class_exists($controllerWithNamespace)) {
+        if (! class_exists($controllerClassWithNs)) {
             throw new ControllerNotFound("Controller Not Found");
         }
 
-        $this->controller = new $controllerWithNamespace;
+        $this->controller = new $controllerClassWithNs;
     }
 
     private function callActionOnController()

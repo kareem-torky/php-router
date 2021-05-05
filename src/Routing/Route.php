@@ -75,4 +75,11 @@ class Route
 
         return $this;
     }
+
+    public function middleware(array $middlewares)
+    {
+        $this->routingTable[$this->currentUrl]['middlewares'] = $middlewares;
+
+        return $this;
+    }
 }
